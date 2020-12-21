@@ -1,17 +1,18 @@
+using AddressBook.Application.Services.Implementations;
+using AddressBook.Application.Services.Interfaces;
+using AddressBook.Application.SignalR.Hubs;
+using AddressBook.Application.SignalR.Notifiers;
+using AddressBook.Repository.EfModels;
+using AddressBook.Repository.Implementations;
+using AddressBook.Repository.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AddressBook
+namespace AddressBook.Application
 {
     public class Startup
     {
@@ -26,6 +27,12 @@ namespace AddressBook
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSignalR();
+            services.AddDbContext<AddressBookContext>(options => options.UseNpgsql(Configuration.GetConnectionString("AddressBookContext")));
+
+            services.AddScoped<IAddressBookRepository, AddressBookRepository>();
+            services.AddScoped<IAddressBookService, AddressBookService>();
+            services.AddScoped<IAddressBookHubNotifier, AddressBookHubNotifier>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +52,7 @@ namespace AddressBook
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<AdressBookHub>("/AddressBookHub");
             });
         }
     }

@@ -1,0 +1,11 @@
+﻿INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Zlatko Hrastić', '1994-08-28', 'Augusta Piazze 1', '{013833809,0923855632}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Marija Knežević', '1997-07-27', 'Ulica jabuka 2', '{091123321}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Ivan Horvat', '1996-06-26', 'Ulica kruški 3', '{091456654}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Josip Kovačević', '1995-05-25', 'Ulica malina 4', '{091789987}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Ana Pavlović', '1994-04-24', 'Ulica limuna 5', '{091147741}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Stjepan Blažević', '1993-03-23', 'Ulica breskvi 6', '{091258852}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Željko Božić', '1992-02-22', 'Ulica brijestova 7', '{091369963}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Ivana Lovrić', '1991-01-21', 'Ulica lubenica 8', '{09274815}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Ivica Babić', '1990-01-20', 'Ulica jorgovana 9', '{09248159}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Tomislav Bošnjak', '1989-12-19', 'Ulica marelica 10', '{092326159}');
+INSERT INTO public.contact(name, date_of_birth, address, telephone_numbers) VALUES ('Mirjana Marković', '2001-01-01', 'Ulica beba 1', '{091687453}');
